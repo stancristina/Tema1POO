@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1541167484 source:c:\users\cristina\desktop\temaproiect1\main.cpp
+	<iostream>
+	<vector>
+	<sstream>
+	<string.h>
+	<cstdlib>
+	<math.h>
+

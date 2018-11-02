@@ -1,1 +1,1 @@
-Tema 1 POO: Polinoame cu coeficienti complexi.
+Tema 1 POO: Polinoame cu coeficienti reali.
