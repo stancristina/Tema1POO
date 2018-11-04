@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1541349317 source:c:\users\cristina\desktop\temaproiect1\main.cpp
+1541358463 source:c:\users\cristina\desktop\temaproiect1\main.cpp
 	<iostream>
 	<vector>
 	<sstream>
@@ -8,13 +8,13 @@
 	<math.h>
 	"Polynomial.cpp"
 
-1541349227 c:\users\cristina\desktop\temaproiect1\polynomial.hpp
+1541358940 c:\users\cristina\desktop\temaproiect1\polynomial.hpp
 	<vector>
 	<string.h>
 	<iostream>
 	<math.h>
 
-1541349225 c:\users\cristina\desktop\temaproiect1\polynomial.cpp
+1541361169 c:\users\cristina\desktop\temaproiect1\polynomial.cpp
 	<iostream>
 	<sstream>
 	"Polynomial.hpp"

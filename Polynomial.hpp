@@ -6,65 +6,65 @@
 #include <math.h>
 using namespace std;
 
-class Polinom
+class Polynomial
 {
 public:
-    Polinom(int grad = 0, vector<double> coef = vector<double>(1, 0));
+    Polynomial(int degree = 0, vector<double> coef = vector<double>(1, 0));
 
-    Polinom(const Polinom &p);
+    Polynomial(const Polynomial &polynom);
 
-    void setGrad(int grad);
-    int getGrad();
+    void setDegree(int degree);
+    int getDegree();
 
     void setCoef(vector <double> coef);
     vector<double> getCoef();
 
     void afisare();
 
-    Polinom operator+=(Polinom &p);
-    Polinom operator+=(double x);
-    Polinom operator-=(Polinom &p);
-    Polinom operator-=(double x);
-    Polinom operator*=(Polinom &p);
-    Polinom operator*=(double x);
-    Polinom operator/=(Polinom &p);
-    Polinom operator/=(double x);
-    Polinom operator%=(Polinom &p);
-    Polinom operator%=(double x);
+    Polynomial operator+=(Polynomial &secondTerm);
+    Polynomial operator+=(double freeTerm);
+    Polynomial operator-=(Polynomial &secondTerm);
+    Polynomial operator-=(double freeTerm);
+    Polynomial operator*=(Polynomial &secondTerm);
+    Polynomial operator*=(double freeTerm);
+    Polynomial operator/=(Polynomial &secondTerm);
+    Polynomial operator/=(double freeTerm);
+    Polynomial operator%=(Polynomial &secondTerm);
+    Polynomial operator%=(double freeTerm);
 
 
-    friend Polinom operator+(const Polinom &p);
-    friend Polinom operator-(const Polinom &p);
+    friend Polynomial operator+(const Polynomial &firstTerm);
+    friend Polynomial operator-(const Polynomial &firstTerm);
 
-    friend Polinom operator+(const Polinom &p, const Polinom &q);
-    friend Polinom operator+(const Polinom &p, double x);
-    friend Polinom operator+(double x, const Polinom &p);
+    friend Polynomial operator+(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend Polynomial operator+(const Polynomial &firstTerm, double freeTerm);
+    friend Polynomial operator+(double freeTerm, const Polynomial &secondTerm);
 
-    friend Polinom operator-(const Polinom &p, const Polinom &q);
-    friend Polinom operator-(const Polinom &p, double x);
-    friend Polinom operator-(double x, const Polinom &p);
+    friend Polynomial operator-(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend Polynomial operator-(const Polynomial &firstTerm, double freeTerm);
+    friend Polynomial operator-(double freeTerm, const Polynomial &secondTerm);
 
-    friend Polinom operator*(const Polinom &p, const Polinom &q);
-    friend Polinom operator*(const Polinom &p, double x);
-    friend Polinom operator*(double x, const Polinom &p);
+    friend Polynomial operator*(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend Polynomial operator*(const Polynomial &firstTerm, double freeTerm);
+    friend Polynomial operator*(double freeTerm, const Polynomial &secondTerm);
 
-    friend Polinom operator/(const Polinom &p, const Polinom &q);
-    friend Polinom operator/(const Polinom &p, double x);
-    friend Polinom operator/(double x, const Polinom &p);
+    friend Polynomial operator/(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend Polynomial operator/(const Polynomial &firstTerm, double freeTerm);
+    friend Polynomial operator/(double freeTerm, const Polynomial &secondTerm);
 
-    friend Polinom operator%(const Polinom &p, const Polinom &q);
-    friend Polinom operator%(const Polinom &p, double x);
-    friend Polinom operator%(double x, const Polinom &p);
+    friend Polynomial operator%(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend Polynomial operator%(const Polynomial &firstTerm, double freeTerm);
+    friend Polynomial operator%(double freeTerm, const Polynomial &secondTerm);
 
-    friend Polinom operator^(Polinom &p, int x);
+    friend Polynomial operator^(Polynomial &firstTerm, int x);
 
-    friend bool operator==(const Polinom &p, const Polinom &q);
-    friend bool operator==(const Polinom &p, double x);
-    friend bool operator==(double x, const Polinom &q);
+    friend bool operator==(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend bool operator==(const Polynomial &firstTerm, double freeTerm);
+    friend bool operator==(double freeTerm, const Polynomial &secondTerm);
 
-    friend bool operator!=(const Polinom &p, const Polinom &q);
-    friend bool operator!=(const Polinom &p, double x);
-    friend bool operator!=(double x, const Polinom &q);
+    friend bool operator!=(const Polynomial &firstTerm, const Polynomial &secondTerm);
+    friend bool operator!=(const Polynomial &firstTerm, double freeTerm);
+    friend bool operator!=(double freeTerm, const Polynomial &secondTerm);
 
     double operator()(int val);
     double& operator[](int val);
@@ -73,11 +73,11 @@ public:
 
     operator string();
 
-    friend istream& operator>>(istream &is, Polinom &p);
-    friend ostream& operator<<(ostream &os, Polinom &p);
+    friend istream& operator>>(istream &is, Polynomial &term);
+    friend ostream& operator<<(ostream &os, Polynomial &term);
 
 private:
-    int grad;
+    int degree;
     vector<double> coef;
 };
 

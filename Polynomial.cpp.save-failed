@@ -518,7 +518,7 @@ double  Polynomial :: operator()(int val)
 {
     double aux=0;
     int index;
-    for(index = 0; index < coef.size(); index++)
+    for(index = 0; i < coef.size(); index++)
     {
         aux = aux + coef[index] * pow(val, index);
     }
@@ -605,7 +605,7 @@ istream& operator>>(istream &is, Polynomial &term)
         {
             while(index < strlen(word))
             {
-                coef = coef * 10 + (word[index] - 48);
+                coef = coef * 10 + (word[i] - 48);
                 index++;
             }
         }
@@ -649,10 +649,10 @@ istream& operator>>(istream &is, Polynomial &term)
     return is;
 }
 
-ostream& operator<<(ostream &os, Polynomial &term)
+ostream& operator<<(ostream &os, Polynomial &p)
 {
-    string stringToPrint = term.toString();
-    os << stringToPrint;
+    string s = p.toString();
+    os << s;
     return os;
 }
 
