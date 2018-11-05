@@ -39,16 +39,6 @@ Polynomial :: Polynomial(const Polynomial &polynom)
     this->coef = polynom.coef;
 }
 
-void Polynomial :: afisare()
-{
-    int index;
-    for(index = 0; index < coef.size(); index++)
-    {
-        cout << coef[index] << " ";
-    }
-    cout<<'\n';
-}
-
 ///Composed overloaded operators
 
 Polynomial Polynomial :: operator+=(Polynomial &secondTerm)
@@ -452,7 +442,7 @@ Polynomial operator^(Polynomial &base, int power)
     for(index = 1; index <= power; index++)
     {
         aux *= base;
-        aux.afisare();
+        ///aux.afisare();
     }
     Polynomial *ob =  new Polynomial(aux);
     return *ob;

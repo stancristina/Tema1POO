@@ -19,8 +19,6 @@ public:
     void setCoef(vector <double> coef);
     vector<double> getCoef();
 
-    void afisare();
-
     Polynomial operator+=(Polynomial &secondTerm);
     Polynomial operator+=(double freeTerm);
     Polynomial operator-=(Polynomial &secondTerm);

@@ -9,86 +9,76 @@ using namespace std;
 
 int main()
 {
-    int degreeAux=6;
-    vector<double> coefAux;
-    coefAux.push_back(1.71);
-    coefAux.push_back(0);
-    coefAux.push_back(1/2.);
-    coefAux.push_back(0);
-    coefAux.push_back(5);
-    coefAux.push_back(4);
-    coefAux.push_back(1);
-    Polynomial p(6, coefAux);
-
-    degreeAux = 2;
-    coefAux.clear();
-
-    coefAux.push_back(0);
-    coefAux.push_back(0);
-    coefAux.push_back(1);
-    Polynomial q(degreeAux, coefAux);
-    cout<<"p= ";
-    p.afisare();
-    //p *=q;
-    //p +=q;
-    //p -=q;
-    cout<<"q= ";
-    q.afisare();
-    //p.setDegree();
-    cout<<"R= " << '\n';
-    //p.afisare();
-
-   // Polynomial r = p + (double)50;
-    //cout<<r<<'\n';
-
-    //cout << r(1) << '\n';
-    //cout << r.toString() << '\n';
-   // cout << (string)r << '\n';
-
-
-    //Polynomial r = (double)40 + p;
-    //r.afisare();
-
-
-    ///Polynomial r = (double)100 - p;
-    ///r.afisare();
-
-    ///Polynomial m = r^3;
-     ///m.afisare();
-
-    ///Polynomial m = p - (double)20;
-    ///m.afisare();
-
-    ///Polynomial rmn = p * q;
-    ///rmn.afisare();
-
-    ///Polynomial mnr = rmn * (double)10;
-    ///mnr.afisare();
-
-    ///cout << (p==p) << " " << (p==q) << " ";
-    ///cout << (p==(double)5);
-
-    vector<double> cf1;
-    cf1.push_back(0);
-    cf1.push_back(8);
-    cf1.push_back(18);
-    cf1.push_back(2);
-    cf1.push_back(7);
-    cf1.push_back(8);
+    vector<double> coef1;
+    coef1.push_back(0);
+    coef1.push_back(8);
+    coef1.push_back(18);
+    coef1.push_back(2);
+    coef1.push_back(7);
+    coef1.push_back(8);
     int degree1 = 5;
-    Polynomial p1(degree1, cf1);
+    Polynomial polynomial1(degree1, coef1);
+    cout << "polynomial1: " << polynomial1 << '\n';
 
-    vector<double> cf2;
-    cf2.push_back(1);
-    cf2.push_back(2);
-    cf2.push_back(0);
-    cf2.push_back(4);
+    vector<double> coef2;
+    coef2.push_back(1);
+    coef2.push_back(2);
+    coef2.push_back(0);
+    coef2.push_back(4);
     int degree2 = 3;
-    Polynomial p2(degree2, cf2);
+    Polynomial polynomial2(degree2, coef2);
+    cout << "polynomial2: " << polynomial2 << '\n';
 
-    Polynomial p3 = p1 / p2;
-    cout << p3 << '\n';
+    cout << '\n';
+    Polynomial sum = polynomial1 + polynomial2;
+    cout << "polynomial1 + polynomial2: " << sum << '\n';
 
+    cout << '\n';
+    Polynomial diff = polynomial1 - polynomial2;
+    cout << "polynomial1 - polynomial2: " << diff << '\n';
+
+    cout << '\n';
+    Polynomial prod = polynomial1 * polynomial2;
+    cout << "polynomial1 * polynomial2: " << prod << '\n';
+
+    cout << '\n';
+    Polynomial div = polynomial1 / polynomial2;
+    cout << "polynomial1 / polynomial2: " << div << '\n';
+
+    cout << '\n';
+    Polynomial mod = polynomial1 % polynomial2;
+    cout << "polynomial1 % polynomial2: " << mod << '\n';
+
+    cout << '\n';
+    Polynomial pow = polynomial1 ^ 3;
+    cout << "polynomial1 ^ 3: " << pow << '\n';
+
+    cout << '\n';
+    int eval = polynomial1(3);
+    cout << "polynomial1(3): " << eval << '\n';
+
+    cout << '\n';
+    Polynomial polynomial3(polynomial1);
+    polynomial3[0] = 17;
+    string polynomial3ToString = polynomial3.toString();
+    cout << "polynomial3ToString: " << polynomial3ToString << '\n';
+
+    cout << '\n';
+    bool areEqual = polynomial1 == polynomial2;
+    cout << "polynomial1 == polynomial2: " << areEqual << '\n';
+
+    cout << '\n';
+    Polynomial positive = +polynomial1;
+    cout << "+ polynomial1: " << positive << '\n';
+
+    cout << '\n';
+    Polynomial negative = -polynomial1;
+    cout << "- polynomial1: " << negative << '\n';
+
+    cout << '\n';
+    Polynomial selfSum;
+    selfSum += polynomial1;
+    cout << "selfSum += polynomial1: " << selfSum << '\n';
 
     return 0;
 }
